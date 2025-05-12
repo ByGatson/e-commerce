@@ -1,33 +1,57 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './admin/layout/component/layout.component';
+import { DashboardComponent } from './admin/components/dashboard/component/dashboard.component';
+import { HomeComponent } from './client/components/home/component/home.component';
 
 const routes: Routes = [
   {
-    path: 'customers',
-    loadChildren: () =>
-      import('./admin/components/customers/module/customers.module').then(
-        (m) => m.CustomersModule
-      ),
+    path: 'admin',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'customers',
+        loadChildren: () =>
+          import('./admin/components/customers/module/customers.module').then(
+            (m) => m.CustomersModule
+          ),
+      },
+      {
+        path: '',
+        component: DashboardComponent,
+      },
+      {
+        path: 'orders',
+        loadChildren: () =>
+          import('./admin/components/orders/module/orders.module').then(
+            (m) => m.OrdersModule
+          ),
+      },
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('./admin/components/products/module/products.module').then(
+            (m) => m.ProductsModule
+          ),
+      },
+    ],
   },
   {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./admin/components/dashboard/module/dashboard.module').then(
-        (m) => m.DashboardModule
-      ),
-  },
-  {
-    path: 'orders',
-    loadChildren: () =>
-      import('./admin/components/orders/module/orders.module').then(
-        (m) => m.OrdersModule
-      ),
+    path: '',
+    component: HomeComponent,
   },
   {
     path: 'products',
     loadChildren: () =>
-      import('./admin/components/products/module/products.module').then(
+      import('./client/components/products/module/products.module').then(
         (m) => m.ProductsModule
+      ),
+  },
+  {
+    path: 'baskets',
+    loadChildren: () =>
+      import('./client/components/baskets/module/baskets.module').then(
+        (m) => m.BasketsModule
       ),
   },
 ];

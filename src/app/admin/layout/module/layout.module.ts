@@ -4,10 +4,17 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { ComponentsModule } from '../components/module/components.module';
 import { LayoutComponent } from '../component/layout.component';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [LayoutComponent],
-  imports: [CommonModule, LayoutRoutingModule, ComponentsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    LayoutRoutingModule,
+    ComponentsModule,
+    MatSidenavModule,
+  ],
   exports: [LayoutComponent],
 })
 export class LayoutModule {}

@@ -1,10 +1,6 @@
-<aside class="sidebar">
-  <nav>
-    <ul>
-      <li><a href="#">Sidebar Menu Item</a></li>
-      <li><a href="#">Sidebar Item</a></li>
-      <li><a href="#">Sidebar Item</a></li>
-      <li><a href="#">Sidebar Menu Item</a></li>
-    </ul>
-  </nav>
-</aside>
+<mat-list>
+  <a routerLink="/admin/products" routerLinkActive="active" mat-list-item>Products</a>
+  <a routerLink="/admin/customers" routerLinkActive="active" mat-list-item>Customers</a>
+  <a routerLink="/admin/orders" routerLinkActive="active" mat-list-item>Orders</a>
+  <a routerLink="/admin" routerLinkActive="active" mat-list-item>Admin Dashboard</a>
+</mat-list>

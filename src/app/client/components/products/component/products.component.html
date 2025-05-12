@@ -1,0 +1,16 @@
+<div class="products-wrapper">
+  <div class="product-card" *ngFor="let product of products">
+    <p-card [style]="{ width: '22rem', overflow: 'hidden', height: '22rem' }">
+      <ng-template #title> {{ product.name }} </ng-template>
+      <ng-template #subtitle> {{ product.price | currency }} </ng-template>
+      <p>
+        {{ product.description }}
+      </p>
+      <ng-template #footer>
+        <div class="flex gap-4 mt-1">
+          <p-button label="Buy" class="w-full" styleClass="w-full" />
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

@@ -1,12 +1,7 @@
-<app-header></app-header>
-
-<div style="display: flex">
-  <app-sidebar></app-sidebar>
-
-  <div style="margin-left: 200px; padding: 2rem; flex-grow: 1">
-    <!-- Main content here -->
-    <router-outlet></router-outlet>
-  </div>
-</div>
-
+<mat-drawer-container class="admin-container">
+  <mat-drawer mode="side" opened>
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
 <app-footer></app-footer>

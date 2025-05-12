@@ -1,1 +1,25 @@
-<app-layout></app-layout>
+<header class="navbar">
+    <p-menubar [model]="[
+      {
+        label: 'Home',
+        icon: 'pi pi-home',
+        routerLink: '/',
+      },
+      {
+        label: 'Products',
+        icon: 'pi pi-info-circle',
+        routerLink: '/products',
+      },
+      {
+        label: 'Admin',
+        icon: 'pi pi-info-circle',
+        routerLink: '/admin',
+      },
+      {
+        label: 'Baskets',
+        icon: 'pi pi-info-circle',
+        routerLink: '/baskets',
+      },
+    ]" />
+</header>
+<router-outlet></router-outlet>

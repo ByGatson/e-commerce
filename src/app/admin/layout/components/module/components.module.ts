@@ -5,10 +5,11 @@ import { ComponentsRoutingModule } from './components-routing.module';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-
+import { RouterModule } from '@angular/router';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
-  imports: [CommonModule, ComponentsRoutingModule],
+  imports: [CommonModule, RouterModule, ComponentsRoutingModule, MatListModule],
   exports: [HeaderComponent, SidebarComponent, FooterComponent],
 })
 export class ComponentsModule {}
