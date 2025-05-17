@@ -1,6 +1,22 @@
-<mat-list>
-  <a routerLink="/admin/products" routerLinkActive="active" mat-list-item>Products</a>
-  <a routerLink="/admin/customers" routerLinkActive="active" mat-list-item>Customers</a>
-  <a routerLink="/admin/orders" routerLinkActive="active" mat-list-item>Orders</a>
-  <a routerLink="/admin" routerLinkActive="active" mat-list-item>Admin Dashboard</a>
-</mat-list>
+<p-panelmenu [model]="[
+      {
+        label: 'Products',
+        icon: 'pi pi-home',
+        routerLink: '/admin/products',
+      },
+      {
+        label: 'Customers',
+        icon: 'pi pi-info-circle',
+        routerLink: '/admin/customers',
+      },
+      {
+        label: 'Orders',
+        icon: 'pi pi-info-circle',
+        routerLink: '/admin/orders',
+      },
+      {
+        label: 'Dashboard',
+        icon: 'pi pi-info-circle',
+        routerLink: '/admin',
+      },
+    ]" [style]="{ 'width': '250px', 'border': 'none' }" [multiple]="false" />

@@ -6,6 +6,7 @@ import { ComponentsModule } from '../components/module/components.module';
 import { LayoutComponent } from '../component/layout.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { SplitterModule } from 'primeng/splitter';
 @NgModule({
   declarations: [LayoutComponent],
   imports: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     LayoutRoutingModule,
     ComponentsModule,
     MatSidenavModule,
+    SplitterModule
   ],
   exports: [LayoutComponent],
 })

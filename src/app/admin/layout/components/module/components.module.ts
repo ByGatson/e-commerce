@@ -7,9 +7,12 @@ import { FooterComponent } from '../footer/footer.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
+
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { ButtonIcon } from 'primeng/button';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
-  imports: [CommonModule, RouterModule, ComponentsRoutingModule, MatListModule],
+  imports: [CommonModule, RouterModule, ComponentsRoutingModule, MatListModule, PanelMenuModule, ButtonIcon],
   exports: [HeaderComponent, SidebarComponent, FooterComponent],
 })
 export class ComponentsModule {}
