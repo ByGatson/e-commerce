@@ -10,21 +10,29 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { MenubarModule } from 'primeng/menubar';
+import { MessageService } from 'primeng/api';
+import { AlertifyService } from './core/services/admin/alertify.service';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, AdminModule, ClientModule, ButtonModule, MenubarModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AdminModule,
+    ClientModule,
+    ButtonModule,
+    MenubarModule
+  ],
   providers: [
-        provideAnimationsAsync(),
-        providePrimeNG({
-            theme: {
-                preset: Aura
-            }
-        })
-    ],
+    provideAnimationsAsync(),
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+      },
+    }),
+    MessageService,
+    AlertifyService
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {
- 
-}
-
+export class AppModule {}

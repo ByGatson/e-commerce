@@ -5,9 +5,11 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from '../component/products.component';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [ProductsComponent],
-  imports: [CommonModule, ProductsRoutingModule, CardModule,ButtonModule],
+  imports: [CommonModule, ProductsRoutingModule, CardModule, ButtonModule, ToastModule],
+  providers:[]
 })
 export class ProductsModule {}

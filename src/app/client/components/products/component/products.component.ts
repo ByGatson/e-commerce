@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { MessageService } from 'primeng/api';
+declare var alertify: any;
 @Component({
   selector: 'app-products',
   standalone: false,
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent {
+  constructor(private messageService: MessageService) {}
   products: any[] = [
     {
       id: 1,
@@ -63,4 +65,8 @@ export class ProductsComponent {
         'Immerse yourself in rich, high-fidelity audio with these over-ear noise-cancelling headphones. Designed for comfort during long listening sessions, they feature Bluetooth 5.2, 40 hours of battery life, and built-in voice assistant compatibility.',
     },
   ];
+
+  showSuccessMessage(): void {
+alertify.alert("hello");
+  }
 }
