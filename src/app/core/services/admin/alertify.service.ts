@@ -4,14 +4,12 @@ declare var alertify: any;
 @Injectable({
   providedIn: 'root',
 })
-
 export class AlertifyService {
   message(settings: MessageSettings): void {
     alertify.set('notifier', 'position', settings.position);
     alertify[settings.type](settings.message);
   }
 }
-
 export class MessageSettings {
   message: string | undefined;
   type: MessageType = MessageType.Notify;

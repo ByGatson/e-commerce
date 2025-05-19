@@ -4,6 +4,7 @@ import {
   MessagePosition,
   MessageType,
 } from './core/services/admin/alertify.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,7 @@ import {
 })
 export class AppComponent {
   title = 'e-commerce';
-  constructor(private alertifyService: AlertifyService) {
-    alertifyService.message({
-      message: 'Başarısız',
-      position: MessagePosition.BottomCenter,
-      type: MessageType.Success,
-    });
+  constructor(private alertifyService: AlertifyService, private toastr : ToastrService) {
+
   }
 }

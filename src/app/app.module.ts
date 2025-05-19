@@ -11,7 +11,9 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { MenubarModule } from 'primeng/menubar';
 import { MessageService } from 'primeng/api';
-import { AlertifyService } from './core/services/admin/alertify.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +23,9 @@ import { AlertifyService } from './core/services/admin/alertify.service';
     AdminModule,
     ClientModule,
     ButtonModule,
-    MenubarModule
+    MenubarModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     provideAnimationsAsync(),
@@ -31,7 +35,6 @@ import { AlertifyService } from './core/services/admin/alertify.service';
       },
     }),
     MessageService,
-    AlertifyService
   ],
   bootstrap: [AppComponent],
 })
