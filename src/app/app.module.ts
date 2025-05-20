@@ -14,7 +14,7 @@ import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -24,8 +24,9 @@ import { ToastrModule } from 'ngx-toastr';
     ClientModule,
     ButtonModule,
     MenubarModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    NgxSpinnerModule,
   ],
   providers: [
     provideAnimationsAsync(),
