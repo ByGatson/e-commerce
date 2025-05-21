@@ -1,14 +1,14 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { HttpClientService } from '../../../../core/services/common/http-client.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminProductService {
-  constructor(private http: HttpClient) {}
-  private apiUrl = 'https://localhost:7284/api/Products';
-  getAll(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/getall`);
+  constructor(private httpService: HttpClientService) {}
+
+  getAll():any{
+    return this.httpService.get<any>({fullEndPoint:"https://jsonplaceholder.typicode.com/comments",});
   }
 }

@@ -36,6 +36,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
       },
     }),
     MessageService,
+    { provide: 'BaseUrl', useValue: 'https://localhost:7284/api', multi: true },
+
   ],
   bootstrap: [AppComponent],
 })

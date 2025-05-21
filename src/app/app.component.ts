@@ -19,13 +19,11 @@ export class AppComponent implements OnInit{
 
   }
   ngOnInit(): void {
-     /** spinner starts on init */
     this.spinner.show();
 
     setTimeout(() => {
-      /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 5000);
-    console.log("NGONINIT")
+
   }
 }

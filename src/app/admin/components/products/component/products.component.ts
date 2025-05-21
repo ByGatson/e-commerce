@@ -12,11 +12,11 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: AdminProductService) {}
 
   ngOnInit(): void {
-    this.productService.getAll().subscribe((result) => {
-      this.products = result.data;
+    this.productService.getAll().subscribe((result: any[]) => {
+      this.products = result;
+      debugger
       console.log(this.products);
     });
-
-    debugger;
-  }
+  } 
 }
+ 
