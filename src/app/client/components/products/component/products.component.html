@@ -1,17 +1,11 @@
-<p-toast></p-toast>
-<div class="products-wrapper">
-  <div class="product-card" *ngFor="let product of products">
-    <p-card [style]="{ width: '22rem', overflow: 'hidden', height: '22rem' }">
-      <ng-template #title> {{ product.name }} </ng-template>
-      <ng-template #subtitle> {{ product.price | currency }} </ng-template>
-      <p>
-        {{ product.description }}
+<div *ngIf="products && products.length > 0;" class = "product-container">
+  <div class="card text-bg-info mb-3 product-item" style="max-width: 18rem" *ngFor="let product of products">
+    <div class="card-header">{{product.price | currency}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">
+        {{product.description}}
       </p>
-      <ng-template #footer>
-        <div class="flex gap-4 mt-1">
-          <p-button label="Buy" class="w-full" styleClass="w-full" />
-        </div>
-      </ng-template>
-    </p-card>
+    </div>
   </div>
 </div>

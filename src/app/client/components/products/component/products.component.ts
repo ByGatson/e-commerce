@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClientService } from '../../../../core/services/common/http-client.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -8,5 +10,13 @@ import { Component } from '@angular/core';
 })
 export class ProductsComponent {
   products: any[] = [];
-  constructor() {}
+  constructor(private httpService: HttpClientService) {
+    this.httpService
+      .get<any[]>({ controller: 'Products', action: 'getall' })
+      .pipe(take(1))
+      .subscribe((data) => {
+        this.products = data;
+        console.log(this.products);
+      });
+  }
 }

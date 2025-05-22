@@ -1,0 +1,11 @@
+.product-container {
+  display: flex;
+  flex-wrap: wrap;       /* Ürünler satır dolunca alt satıra geçer */
+  justify-content: flex-start; /* Ortala */
+  gap: 1rem;             /* Ürünler arası boşluk */
+}
+.product-item {
+  flex: 0 1 350px;       /* Ürün genişliği yaklaşık 200px, esnek */
+  box-sizing: border-box;
+  height:200px;
+}

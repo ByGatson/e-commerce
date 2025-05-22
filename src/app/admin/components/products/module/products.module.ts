@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductsRoutingModule } from './products-routing.module';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { ToastModule } from 'primeng/toast';
+import { ProductsComponent } from '../component/products.component';
+
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, ProductsRoutingModule, CardModule, ButtonModule, ToastModule],
+  declarations: [ProductsComponent],
+  imports: [CommonModule, ProductsRoutingModule],
 })
 export class ProductsModule { }
