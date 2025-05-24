@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { take } from 'rxjs';
+import { catchError, of, take } from 'rxjs';
 import { HttpClientService } from '../../../../core/services/common/http-client.service';
+import { AdminProductService } from '../service/admin-product.service';
 
 @Component({
   selector: 'app-products',
@@ -10,10 +11,18 @@ import { HttpClientService } from '../../../../core/services/common/http-client.
 })
 export class ProductsComponent {
   products: any[] = [];
-  constructor(private httpService: HttpClientService) {
-    this.httpService
-      .get<any[]>({ controller: 'Products', action: 'getall' })
-      .pipe(take(1))
+  constructor(private productService: AdminProductService) {this.fetchProducts();}
+  
+  fetchProducts(): void {
+    this.productService
+      .getAll()
+      .pipe(
+        take(1),
+        catchError((error) => {
+          console.error('Ürünler alınırken hata oluştu:', error);
+          return of([]);
+        })
+      )
       .subscribe((data) => {
         this.products = data;
       });
