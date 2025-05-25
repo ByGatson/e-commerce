@@ -1,0 +1,16 @@
+<div *ngIf="products && products.length > 0;" class = "product-container">
+  <div class="card text-bg-info mb-3 product-item" style="max-width: 18rem" *ngFor="let product of products">
+    <div class="card-header">{{product.price }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">
+        {{product.description}}
+      </p>
+    </div>
+    <div class="card-footer">
+      <button style = "background-color: red;">Delete</button>
+      <button style = "background-color: edit;">Update</button>
+    </div>
+  </div>
+</div>
+ 

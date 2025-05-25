@@ -1,12 +1,8 @@
-<div *ngIf="products && products.length > 0;" class = "product-container">
-  <div class="card text-bg-info mb-3 product-item" style="max-width: 18rem" *ngFor="let product of products">
-    <div class="card-header">{{product.price}}</div>
-    <div class="card-body">
-      <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">
-        {{product.description}}
-      </p>
-    </div>
+<div class="container mt-4">
+  <div class="mb-3">
+    <button class="btn btn-success" (click)="openEdit()">Add Product</button>
   </div>
+
+  <app-product-list #productList></app-product-list>
+  <app-product-edit (isEdited) = "isEdited()" (isClosed)="editVisible = false" *ngIf="editVisible"></app-product-edit>
 </div>
-<app-product-edit></app-product-edit>

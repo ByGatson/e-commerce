@@ -1,0 +1,11 @@
+.product-container {
+  display: flex;
+  flex-wrap: wrap;       
+  justify-content: flex-start;
+  gap: 1rem;            
+}
+.product-item {
+  flex: 0 1 350px;       
+  box-sizing: border-box;
+  height:200px;
+}

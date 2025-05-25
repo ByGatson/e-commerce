@@ -6,21 +6,21 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ToastrAlertifyService {
   constructor(private toastr: ToastrService) {}
-  message(message: string, title: string, options: ToastrMessageOptions) {
+  message(message: string, title: string, options: ToastrMessageOptions = {messageType: ToastrMessageType.Warning,messagePosition: ToastrMessagePosition.TopRight}) {
     this.toastr[options.messageType](message, title); 
   }
 }
-class ToastrMessageOptions {
+export class ToastrMessageOptions {
   messageType: ToastrMessageType = ToastrMessageType.Info;
-  messagePosition: ToastrMessagePosition = ToastrMessagePosition.TopRight;
+  messagePosition?: ToastrMessagePosition = ToastrMessagePosition.TopRight;
 }
-enum ToastrMessageType {
+export enum ToastrMessageType {
   Success = 'success',
   Info = 'info',
   Warning = 'warning',
   Error = 'error',
 }
-enum ToastrMessagePosition {
+export enum ToastrMessagePosition {
   TopCenter = 'toast-top-center',
   TopRight = 'toast-top-right',
   TopLeft = 'toast-top-left',
