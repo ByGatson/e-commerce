@@ -9,6 +9,6 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
   declarations: [],
   imports: [CommonModule, AdminRoutingModule, LayoutModule],
   exports: [LayoutModule],
-    providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class AdminModule {}

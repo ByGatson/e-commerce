@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input,Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AdminProductService } from '../../service/admin-product.service';
 import { take } from 'rxjs';
 import { Product } from '../../../../../core/models/product.dto';
@@ -19,7 +19,7 @@ export class ProductEditComponent {
   @Output() isClosed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   editForm!: FormGroup;
-  
+
   constructor(
     private alertifyService: ToastrAlertifyService,
     private productService: AdminProductService,
@@ -32,12 +32,26 @@ export class ProductEditComponent {
     this.productService
       .create(product)
       .pipe(take(1))
-      .subscribe((data) => {
-        console.log(data);
-        this.alertifyService.message('created product', 'Success', {
-          messageType: ToastrMessageType.Success,
-        });
-        this.isEdited.emit(true);
+      .subscribe({
+        next: (success) => {
+          if (success) {
+            this.alertifyService.message(
+              'Ürün ekleme işlemi başarılı.',
+              'Success',
+              { messageType: ToastrMessageType.Success }
+            );
+            this.isEdited.emit(true);
+          }
+        },
+        error: (errorMessage) => {
+          this.alertifyService.message(
+            errorMessage ?? 'Bir hata oluştu.',
+            'Error',
+            {
+              messageType: ToastrMessageType.Error,
+            }
+          );
+        },
       });
   }
 
@@ -54,7 +68,7 @@ export class ProductEditComponent {
     });
   }
 
-  onClose():void{
+  onClose(): void {
     this.isClosed.emit(true);
   }
 }

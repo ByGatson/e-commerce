@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../../../../core/models/product.dto';
-import { catchError, of, take } from 'rxjs';
 import { ToastrAlertifyService } from '../../../../../core/services/client/alertify.service';
 import { AdminProductService } from '../../service/admin-product.service';
 
@@ -21,20 +20,10 @@ export class ProductListComponent {
   }
 
   public fetchProducts(): void {
-    this.productService
-      .getAll()
-      .pipe(
-        take(1),
-        catchError((error) => {
-          this.alertify.message(
-            `Ürünler alınırken hata oluştu: ${error.message}`,
-            'Error'
-          );
-          return of([]);
-        })
-      )
-      .subscribe((data) => {
-        this.products = [...data];
-      });
+    this.productService.getAll().subscribe({
+      next: (data) => (this.products = data),
+      error: () =>
+        this.alertify.message('Ürün listelenirken hata oluştu', 'Error'),
+    });
   }
 }
