@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import {
   AlertifyService,
   MessagePosition,
@@ -6,12 +6,14 @@ import {
 } from './core/services/admin/alertify.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
   styleUrl: './app.component.scss',
+   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit{
   title = 'e-commerce';
@@ -19,12 +21,12 @@ export class AppComponent implements OnInit{
     
     { label: 'Products', icon: 'pi pi-shopping-cart', routerLink: '/products' },
     { label: 'Admin', icon: 'pi pi-user', routerLink: '/admin' },
-    { label: 'Baskets', icon: 'pi pi-inbox', routerLink: '/baskets' }
+    { label: 'Baskets', icon: 'pi pi-inbox', routerLink: '/baskets' },
   ];
   constructor(private spinner: NgxSpinnerService) {
 
   }
   ngOnInit(): void {
   
-  }
+  }  
 }

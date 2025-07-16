@@ -23,19 +23,23 @@
             </a>
           </li>
         </ul>
-         <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      </div>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <app-register>Test</app-register>
+      </div>   
     </div>
   </nav>
   <div class="body-page">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+  </div>
 </div>
-
-</div>
-
 
 <ngx-spinner
   bdColor="rgba(51,51,51,0.8)"

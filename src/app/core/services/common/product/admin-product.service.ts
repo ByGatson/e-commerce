@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClientService } from '../../../../core/services/common/http-client.service';
+import { HttpClientService } from '../http-client.service';
 import {
   catchError,
   map,
   Observable,
   throwError,
 } from 'rxjs';
-import { Product } from '../../../../core/models/product.dto';
+import { Product } from '../../../models/product.dto';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({

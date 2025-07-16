@@ -16,10 +16,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterModule } from "./client/components/register/module/register.module";
+import { RegisterComponent } from './client/components/register/component/register.component';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,8 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    NgbModule,
-  ],
+    NgbModule
+],
   providers: [
     provideAnimationsAsync(),
     providePrimeNG({
@@ -43,6 +45,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     { provide: 'BaseUrl', useValue: 'https://localhost:7284/api', multi: true },
 
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent], 
 })
 export class AppModule {}

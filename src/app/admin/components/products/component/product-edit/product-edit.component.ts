@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AdminProductService } from '../../service/admin-product.service';
+import { AdminProductService } from '../../../../../core/services/common/product/admin-product.service';
 import { take } from 'rxjs';
 import { Product } from '../../../../../core/models/product.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

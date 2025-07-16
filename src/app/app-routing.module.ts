@@ -54,6 +54,12 @@ const routes: Routes = [
         (m) => m.BasketsModule
       ),
   },
+  {
+    path:'register',
+    loadChildren:()=>import('./client/components/register/module/register.module').then(
+      (m) => m.RegisterModule
+    )
+  }
 ];
 
 @NgModule({
