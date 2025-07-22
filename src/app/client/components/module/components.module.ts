@@ -6,6 +6,7 @@ import { HomeModule } from '../home/module/home.module';
 import { ProductsModule } from '../products/module/products.module';
 import { BasketsModule } from '../baskets/module/baskets.module';
 import { RegisterModule } from '../register/module/register.module';
+import { LoginModule } from '../login/module/login.module';
 
 @NgModule({
   declarations: [],
@@ -15,7 +16,9 @@ import { RegisterModule } from '../register/module/register.module';
     HomeModule,
     ProductsModule,
     BasketsModule,
-    RegisterModule
+    RegisterModule,
+    LoginModule
   ],
+  exports:[LoginModule, RegisterModule]
 })
 export class ComponentsModule {}

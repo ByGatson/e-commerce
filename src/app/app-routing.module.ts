@@ -53,12 +53,6 @@ const routes: Routes = [
       import('./client/components/baskets/module/baskets.module').then(
         (m) => m.BasketsModule
       ),
-  },
-  {
-    path:'register',
-    loadChildren:()=>import('./client/components/register/module/register.module').then(
-      (m) => m.RegisterModule
-    )
   }
 ];
 

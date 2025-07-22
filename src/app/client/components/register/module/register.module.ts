@@ -15,9 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RegisterFormComponent } from '../component/register-form/register-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginModule } from '../../login/module/login.module';
 
 @NgModule({
-  declarations: [RegisterFormComponent],
+  declarations: [RegisterComponent,RegisterFormComponent],
   imports: [
     CommonModule,
     RegisterRoutingModule,
@@ -32,5 +33,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
+  exports:[RegisterComponent]
 })
 export class RegisterModule {}
