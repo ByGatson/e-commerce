@@ -18,10 +18,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class AppComponent implements OnInit{
   title = 'e-commerce';
   navItems = [
-    
-    { label: 'Products', icon: 'pi pi-shopping-cart', routerLink: '/products' },
     { label: 'Admin', icon: 'pi pi-user', routerLink: '/admin' },
-    { label: 'Baskets', icon: 'pi pi-inbox', routerLink: '/baskets' },
   ];
   constructor(private spinner: NgxSpinnerService) {
 

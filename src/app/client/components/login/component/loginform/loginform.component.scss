@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  background: rgb(242, 242, 242);
+  background: linear-gradient(135deg, #f2f2f2, #ffffff);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,15 +8,34 @@
   padding: 20px;
 }
 
-.register-form {
+.login-form {
+  position: relative; /* ÖNEMLİ */
   padding: 40px 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
   width: 400px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  background-color: #fff;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #000;
 }
 
 .form-title {
@@ -25,6 +44,8 @@
   color: #333;
   font-size: 24px;
   font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
 }
 
 .full-width {
@@ -32,18 +53,63 @@
   margin-bottom: 20px;
 }
 
-.register-button {
+.full-width input,
+.full-width textarea {
   width: 100%;
-  padding: 12px 0;
-  font-size: 16px;
+  padding: 10px;
   border-radius: 8px;
-  text-transform: uppercase;
-  font-weight: 500;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-  background-color: black !important;
-  transition: 0.1s ease;
+  border: 1px solid #ccc;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  font-size: 14px;
 }
 
-.register-button:hover {
-  background-color: #171717 !important; /* Mat primary hover rengi */
+.full-width input:focus,
+.full-width textarea:focus {
+  border-color: #007acc;
+  box-shadow: 0 0 4px rgba(0, 122, 204, 0.3);
+  outline: none;
+}
+
+@keyframes drop-in {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.form-button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 14px 0;
+  font-size: 16px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  background-color: black !important;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  animation: drop-in 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.form-button:hover {
+  background-color: #f2f2f2 !important;
+  color: black;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 500px) {
+  .register-form {
+    width: 100%;
+    padding: 30px 20px;
+  }
 }

@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ToastrAlertifyService } from '../../../../../core/services/client/alertify.service';
-import { RegisterService } from '../../../register/services/register.service';
 
 @Component({
   selector: 'app-loginform',
@@ -13,22 +12,22 @@ import { RegisterService } from '../../../register/services/register.service';
 export class LoginformComponent {
   readonly dialogRef = inject(MatDialogRef<LoginformComponent>);
   public editForm: FormGroup | any;
- constructor(
+  constructor(
     private fb: FormBuilder,
-    private registerService: RegisterService,
     private alertifyService: ToastrAlertifyService
   ) {
     this.createForm();
   }
   onSubmit(): void {}
-   private createForm(): void {
-    this.editForm = this.fb.group(
-      {
-        fullName: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-        userName: ['', Validators.required],
-        password: ['', [Validators.required, Validators.minLength(6)]],
-      }
-    );
+
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
+
+  private createForm(): void {
+    this.editForm = this.fb.group({
+      userName: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
 }

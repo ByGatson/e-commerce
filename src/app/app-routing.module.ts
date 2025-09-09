@@ -38,10 +38,6 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent,
-  },
-  {
-    path: 'products',
     loadChildren: () =>
       import('./client/components/products/module/products.module').then(
         (m) => m.ProductsModule

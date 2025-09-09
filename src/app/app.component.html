@@ -1,8 +1,11 @@
-
 <div class="body-container">
-  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-dark position-relative" data-bs-theme="dark">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+      <!-- Sol: Home -->
       <a class="navbar-brand" routerLink="/">Home</a>
+
+      <!-- Menü Toggler (Mobile) -->
       <button
         class="navbar-toggler"
         type="button"
@@ -15,8 +18,28 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <!-- Orta: Search -->
+      <div class="position-absolute start-50 translate-middle-x" style="width: 300px;">
+        <div style="position: relative;">
+          <input
+            class="form-control ps-4"
+            type="search"
+            placeholder=""
+            aria-label="Search"
+          />
+          <span
+            style="position: absolute; left: 2px; top: 50%; transform: translateY(-50%); color: #ccc;"
+          >
+            🔍
+          </span>
+        </div>
+      </div>
+
+      <!-- Navbar Collapse: Menü ve Sağ taraf -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+        <!-- Menü Linkleri -->
+        <ul class="navbar-nav me-3 mb-2 mb-lg-0">
           <li class="nav-item" *ngFor="let item of navItems">
             <a class="nav-link" [routerLink]="item.routerLink">
               <i [class]="item.icon" style="margin-right: 4px"></i>
@@ -24,20 +47,17 @@
             </a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <app-login></app-login>
-        <app-register></app-register>
-      </div>   
+
+        <!-- Login, Register, Sepet -->
+        <div class="d-flex align-items-center">
+          <app-login></app-login>
+          <app-register></app-register>
+          <a class="nav-link text-white fs-4 ms-3" [routerLink]="'/baskets'" title="Cart">🛒</a>
+        </div>
+      </div>
     </div>
   </nav>
+
   <div class="body-page">
     <router-outlet></router-outlet>
   </div>

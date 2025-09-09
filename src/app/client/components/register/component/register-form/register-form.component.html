@@ -1,6 +1,7 @@
 <div class="container">
   <form class="register-form" [formGroup]="editForm" (ngSubmit)="onSubmit()"> 
-    <h2 class="form-title">Create Account</h2>
+    <h2 class="form-title">Create an Account</h2>
+ <button class = "close-button" (click)="closeDialog()">X</button>
 
     <mat-form-field appearance="outline">
       <mat-label>Full Name</mat-label>
@@ -27,5 +28,5 @@
       <input matInput type="password" required>
     </mat-form-field>
   </form>
-   <button mat-flat-button color="primary" class="register-button" (click)="onSubmit()">Register</button>
+   <button mat-flat-button color="primary" class="form-button" (click)="onSubmit()">Create</button>
 </div>

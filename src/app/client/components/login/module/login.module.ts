@@ -28,7 +28,7 @@ import { RegisterModule } from '../../register/module/register.module';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
-    FormsModule
+    RegisterModule
   ],
   exports:[LoginComponent]
 })

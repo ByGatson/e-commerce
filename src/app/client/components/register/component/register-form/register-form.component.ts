@@ -26,7 +26,9 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
   }
-
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
   private createForm(): void {
     this.editForm = this.fb.group(
       {
@@ -40,6 +42,7 @@ export class RegisterFormComponent implements OnInit {
     );
   }
   private createUser(user: User):void{
+    if(!this.editForm.valid) return;
     this.registerService.create(user).pipe(take(1)).subscribe(
       {
         next: (success) => {
